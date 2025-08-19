@@ -14,13 +14,7 @@ hilos de **forwarding** y **routing**, y ejecución local por sockets TCP.
 ## Requisitos
 
 - Python 3.10+
-
-## Instalar
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
+- Wsl
 
 ## Qué incluye cada algoritmo (Fase 1)
 
@@ -41,3 +35,4 @@ source .venv/bin/activate
 - `make send-lsr` → espera ~8 s y envía **A → D** en LSR.
 - `make ps` → lista procesos activos del laboratorio.
 - `make stop` → detiene todos los nodos del laboratorio.
+
