@@ -29,16 +29,21 @@ def DIJKSTRA_ALL(G: GRAPH, SRC: str):
                 DIST[V] = ND
                 PREV[V] = U
                 heapq.heappush(PQ, (ND, V))
+
     NEXT = {}
-    for DST in DIST:
+    for DST in DIST.keys():
         if DST == SRC:
             continue
+        if DST not in PREV:
+            continue
+
+        if PREV[DST] == SRC:
+            NEXT[DST] = DST
+            continue
+
         CUR = DST
-        PATH = [CUR]
-        while CUR in PREV and PREV[CUR] != SRC:
+        while PREV.get(CUR) is not None and PREV[CUR] != SRC:
             CUR = PREV[CUR]
-            PATH.append(CUR)
-        if DST in PREV:
-            NH = DST if PREV[DST] == SRC else PREV[CUR]
-            NEXT[DST] = NH if PREV.get(NH, SRC) == SRC else NH
+        NEXT[DST] = CUR
+
     return NEXT, DIST
