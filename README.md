@@ -36,3 +36,59 @@ hilos de **forwarding** y **routing**, y ejecución local por sockets TCP.
 - `make ps` → lista procesos activos del laboratorio.
 - `make stop` → detiene todos los nodos del laboratorio.
 
+# Routing Lab – Fase 2 (Redis Pub/Sub)
+
+La red se implementa con Redis Pub/Sub remoto.
+Cada nodo es un proceso Python que publica/suscribe en canales Redis (uno por nodo).
+Se implementan y prueban los 3 algoritmos sobre Redis:
+
+- Flooding (Redis)
+- Distance Vector – DV (Redis)
+- Link State Routing – LSR (Redis)
+
+se respetó al 100% el protocolo de mensajes indicado.
+
+- Requisitos (Fase 2)
+- Python 3.12 recomendado (funciona 3.10+)
+- Entorno virtual
+- Acceso Redis remoto (proveído)
+
+# Instalación rápida
+
+```
+cd ~/Lab3Redes
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+# Protocolo de mensajes
+
+```
+{
+  "proto": "lsr|dv|flooding",
+  "type": "hello|info|message",
+  "from": "channel:nodeX",     
+  "to": "broadcast|channel:nodeY",
+  "ttl": 5,
+  "headers": ["A","B","C"],     
+  "payload": { ... } | "texto"
+}
+```
+
+# Ejecución y pruebas – Fase 2 general se le cambia el agoritmo dependiendo el que se decida usar al igual que si se desea usar broadcast se le cambian parametros
+B y C receptores
+```
+netlab-redis --redis configs/redis.json --topo configs/topology.json --id B --proto lsr --verbose
+netlab-redis --redis configs/redis.json --topo configs/topology.json --id C --proto lsr --verbose
+```
+
+A emisor (unicast a C)
+
+```
+netlab-redis --redis configs/redis.json --topo configs/topology.json \
+  --id A --proto lsr \
+  --send-to channel:nodeC --text "HOLA DESDE A (LSR)" \
+  --exit-after-send --verbose
+```
+
