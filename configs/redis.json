@@ -1,0 +1,5 @@
+{
+  "HOST": "lab3.redesuvg.cloud",
+  "PORT": 6379,
+  "PASSWORD": "UVGRedis2025"
+}

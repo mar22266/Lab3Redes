@@ -1,0 +1,9 @@
+{
+  "SECTION": "sec20",
+  "TOPOLOGY_ID": "topologia1",
+  "NODES": {
+    "A": { "JID": "channel:nodeA", "NEIGHBORS": { "B": 1, "C": 2 } },
+    "B": { "JID": "channel:nodeB", "NEIGHBORS": { "A": 1, "C": 1 } },
+    "C": { "JID": "channel:nodeC", "NEIGHBORS": { "A": 2, "B": 1 } }
+  }
+}
