@@ -1,0 +1,10 @@
+{
+  "SECTION": "sec20",
+  "TOPOLOGY_ID": "topologia1",
+  "NODES": {
+    "A": { "JID": "A", "NEIGHBORS": { "B": 1, "D": 1 } },
+    "B": { "JID": "B", "NEIGHBORS": { "A": 1, "C": 1 } },
+    "C": { "JID": "C", "NEIGHBORS": { "B": 1, "D": 1 } },
+    "D": { "JID": "D", "NEIGHBORS": { "A": 1, "C": 1 } }
+  }
+}
