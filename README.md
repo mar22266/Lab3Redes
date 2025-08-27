@@ -87,7 +87,7 @@ netlab-redis --redis configs/redis.json --topo configs/topology.json --id C --pr
 A emisor (unicast a C)
 
 ```
-netlab-redis --redis configs/redis.json --topo configs/topology.json --id A --proto lsr --send-to channel:nodeC --text "HOLA DESDE A (LSR)" --exit-after-send --verbose
+netlab-redis --redis configs/redis.json --topo configs/topology.json --id A --proto lsr --send-to sec20.topologia1.nodo1 --text "HOLA DESDE A (LSR)" --exit-after-send --verbose
 ```
 
 
