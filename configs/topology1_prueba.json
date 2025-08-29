@@ -1,11 +1,11 @@
 {
   "SECTION": "sec20",
-  "TOPOLOGY_ID": "topologia1",
+  "TOPOLOGY_ID": "topologia2",
   "NODES": {
-    "A": { "JID": "A", "NEIGHBORS": { "B": 1 } },
-    "B": { "JID": "B", "NEIGHBORS": { "C": 1, "D": 1 } },
-    "C": { "JID": "C", "NEIGHBORS": { "B": 1, "D": 1 } },
-    "D": { "JID": "D", "NEIGHBORS": { "B": 1, "C": 1, "E": 1 } },
-    "E": { "JID": "E", "NEIGHBORS": { "D": 1 } }
+    "A": { "JID": "sec20.topologia1.nodoA", "NEIGHBORS": { "B": 1 } },
+    "B": { "JID": "sec20.topologia1.nodoB", "NEIGHBORS": { "C": 1, "D": 1 } },
+    "C": { "JID": "sec20.topologia1.nodoC", "NEIGHBORS": { "B": 1, "D": 1 } },
+    "D": { "JID": "sec20.topologia1.nodoD", "NEIGHBORS": { "B": 1, "C": 1, "E": 1 } },
+    "E": { "JID": "sec20.topologia1.nodoE", "NEIGHBORS": { "D": 1 } }
   }
 }
