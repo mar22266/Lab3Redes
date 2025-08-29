@@ -68,8 +68,8 @@ pip install -e .
 {
   "proto": "lsr|dv|flooding",
   "type": "hello|info|message",
-  "from": "channel:nodeX",     
-  "to": "broadcast|channel:nodeY",
+  "from": "sec20.topologia1.node2",     
+  "to": "broadcast|sec20.topologia1.node1",
   "ttl": 5,
   "headers": ["A","B","C"],     
   "payload": { ... } | "texto"
