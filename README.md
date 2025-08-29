@@ -79,15 +79,15 @@ pip install -e .
 # Ejecución y pruebas – Fase 2 general se le cambia el agoritmo dependiendo el que se decida usar al igual que si se desea usar broadcast se le cambian parametros
 B y C receptores en terminales distintas se prueba
 ```
-netlab-redis --redis configs/redis.json --topo configs/topology.json --id B --proto lsr --verbose
+netlab-redis --redis configs/redis.json --topo configs/topology1_prueba.json --id B --proto flooding --verbose
 
-netlab-redis --redis configs/redis.json --topo configs/topology.json --id C --proto lsr --verbose
+netlab-redis --redis configs/redis.json --topo configs/topology1_prueba.json --id C --proto flooding --verbose
 ```
 
 A emisor (unicast a C)
 
 ```
-netlab-redis --redis configs/redis.json --topo configs/topology.json --id A --proto lsr --send-to sec20.topologia1.nodo1 --text "HOLA DESDE A (LSR)" --exit-after-send --verbose
+netlab-redis --redis configs/redis.json --topo configs/topology.json --id A --proto flooding --send-to sec20.topologia1.nodo1 --text "HOLA DESDE A (LSR)" --exit-after-send --verbose
 ```
 
 
