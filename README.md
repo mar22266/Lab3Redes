@@ -87,7 +87,7 @@ netlab-redis --redis configs/redis.json --topo configs/topology1_prueba.json --i
 A emisor (unicast a C)
 
 ```
-netlab-redis --redis configs/redis.json --topo configs/topology.json --id A --proto flooding --send-to sec20.topologia1.nodo1 --text "HOLA DESDE A (LSR)" --exit-after-send --verbose
+netlab-redis --redis configs/redis.json --topo configs/topology1_prueba.json --id A --proto flooding --send-to sec20.topologia1.nodo4 --text "HOLA DESDE FLOODING" --exit-after-send --verbose
 ```
 
 
